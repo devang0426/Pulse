@@ -12,17 +12,14 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const UserDropdown = () => {
+const UserDropdown = ({user}:{user:User}) => {
   const router = useRouter();
 
   const handleSignOut = async () => {
     router.push("/sign-in");
   };
 
-  const user = {
-    name: "Devang",
-    email: "devang@hf.com",
-  };
+ 
 
   return (
     <DropdownMenu>
