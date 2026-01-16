@@ -4,8 +4,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
@@ -18,10 +16,7 @@ const UserDropdown = ({user}:{user:User}) => {
   const handleSignOut = async () => {
     router.push("/sign-in");
   };
-
- 
-
-  return (
+    return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
@@ -45,28 +40,7 @@ const UserDropdown = ({user}:{user:User}) => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem onClick={() => router.push("/profile")}>
-          Profile
-        </DropdownMenuItem>
-
-        <DropdownMenuItem onClick={() => router.push("/billing")}>
-          Billing
-        </DropdownMenuItem>
-
-        <DropdownMenuItem onClick={() => router.push("/team")}>
-          Team
-        </DropdownMenuItem>
-
-        <DropdownMenuItem onClick={() => router.push("/subscription")}>
-          Subscription
-        </DropdownMenuItem>
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem onClick={handleSignOut} className="text-red-500">
+      <DropdownMenuItem onClick={handleSignOut} className="text-red-500">
           Sign Out
         </DropdownMenuItem>
       </DropdownMenuContent>
